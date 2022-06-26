@@ -1,17 +1,17 @@
+import 'package:aider/models/category.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CategoriesInstitutesScreen extends StatelessWidget {
-  const CategoriesInstitutesScreen({ Key? key }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+
+    final category = ModalRoute.of(context)!.settings.arguments as Category;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Instituições'),
+        title: Text(category.title as String),
       ),
       body: const Center(
-        child: Text('Instituições por Categoria'),
+        child: Text('Instituições por Categoria '),
       ),
     );
   }
