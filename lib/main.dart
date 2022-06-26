@@ -1,3 +1,4 @@
+import 'package:aider/src/features/categories/presentation/view/page/categories_institutes_screen.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_screen.dart';
 import 'package:aider/src/features/home/presentation/view/page/home.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: CategoriesScreen(),
+      routes: {
+        '/':(context) => const CategoriesScreen(),
+        '/categories-institutes':(context) => CategoriesInstitutesScreen(),
+      }
     );
   }
 }
