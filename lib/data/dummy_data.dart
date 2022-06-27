@@ -77,7 +77,7 @@ const DUMMY_INSTITUTES = [
     imageUrl: 'https://www.hypeness.com.br/1/2018/02/EDIT_Luisa-Mell.jpg', 
     purposeInstitute: ['Ptoteção de Animaais','Proteção Animal'], 
     instituteLink: 'http://ilm.org.br/', 
-    description: 'Nossa preocupação com o bem-estar tem de estar ligada a todo ser vivo, e o Instituto Luisa Mell trabalha no resgate e recuperação de animais feridos ou em situação de risco, em necessidade de adoção. Os animais são protegidos, cuidados e alimentados em um abrigo com mais de 300 bichinhos, enquanto aguardam pela chance de um dono para lhes oferecer mais cuidado e amor. Para além da adoção, porém, a causa animal e do meio-ambiente como um todo é fundamental para o Instituto.'
+    description: 'O Instituto Luisa Mell trabalha no resgate e recuperação de animais feridos ou em situação de risco, em necessidade de adoção. Os animais são protegidos, cuidados e alimentados em um abrigo com mais de 300 bichinhos.'
   ),
   Institutes(
     id: '6', 
