@@ -1,4 +1,5 @@
 import 'package:aider/models/institutes.dart';
+import 'package:aider/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class InstituteItem extends StatelessWidget {
@@ -6,11 +7,16 @@ class InstituteItem extends StatelessWidget {
 
   const InstituteItem(this.institute);
 
-  void _selectInstitute() {}
+  void _selectInstitute(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      AppRoutes.INSTITUTES_DETAILS,
+      arguments: institute
+      );
+  }
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectInstitute,
+      onTap: () => _selectInstitute(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -72,7 +78,7 @@ class InstituteItem extends StatelessWidget {
                       Text(
                         ' ${institute.purposeInstitute![0]}',
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold
                         ),
                         softWrap: true,
@@ -87,7 +93,7 @@ class InstituteItem extends StatelessWidget {
                       Text(
                         '${institute.localState}',
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold
                         ),
                         softWrap: true,
