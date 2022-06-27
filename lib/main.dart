@@ -1,6 +1,7 @@
 import 'package:aider/src/features/categories/presentation/view/page/categories_institutes_screen.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_screen.dart';
 import 'package:aider/src/features/home/presentation/view/page/home.dart';
+import 'package:aider/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: {
-        '/':(context) => const CategoriesScreen(),
-        '/categories-institutes':(context) => CategoriesInstitutesScreen(),
+        AppRoutes.HOME:(context) => const CategoriesScreen(),
+        AppRoutes.CATEGORIES_INSTITUTES:(context) => CategoriesInstitutesScreen(),
       }
     );
   }

@@ -1,4 +1,5 @@
 import 'package:aider/models/category.dart';
+import 'package:aider/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -8,7 +9,7 @@ class CategoryItem extends StatelessWidget {
 
   void _selectCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
-      '/categories-institutes',
+      AppRoutes.CATEGORIES_INSTITUTES,
       arguments: category,
       );
   }
