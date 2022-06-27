@@ -1,6 +1,7 @@
 import 'package:aider/src/features/categories/presentation/view/page/categories_institutes_screen.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_screen.dart';
 import 'package:aider/src/features/details/presentation/view/page/institutes_details_screen.dart';
+import 'package:aider/src/features/tabs/presentation/view/page/tabs_screen.dart';
 import 'package:aider/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -18,19 +19,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Aider',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.lightGreen,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
           titleMedium: const TextStyle(
             fontSize: 20,
             fontFamily: 'RobotoCondensed',
             fontWeight: FontWeight.bold,
-            color: Colors.black
+            color: Colors.white
           ),
         ),
       ),
       routes: {
-        AppRoutes.HOME:(context) => const CategoriesScreen(),
+        AppRoutes.HOME:(context) =>const TabsScreen(),
         AppRoutes.CATEGORIES_INSTITUTES:(context) => CategoriesInstitutesScreen(),
         AppRoutes.INSTITUTES_DETAILS:(context) => const InstituteDetailsScreen()
       }

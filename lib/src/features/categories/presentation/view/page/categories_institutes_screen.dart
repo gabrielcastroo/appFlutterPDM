@@ -15,7 +15,13 @@ class CategoriesInstitutesScreen extends StatelessWidget {
     }).toList();
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.title as String),
+        title: Text(category.title as String,
+          style:const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+        shadowColor: Colors.amber,
       ),
       body: ListView.builder(
         itemCount: categoryInstitutes.length,
