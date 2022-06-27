@@ -6,8 +6,10 @@ class InstituteDetailsScreen extends StatelessWidget {
   
 
   final Function(Institutes) onToggleFavorite;
+    
+  final bool Function(Institutes) isFavorite;
 
-  const InstituteDetailsScreen(this.onToggleFavorite);
+  const InstituteDetailsScreen(this.onToggleFavorite, this.isFavorite);
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class InstituteDetailsScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.favorite),
+        child: Icon(isFavorite(institute) ? Icons.favorite : Icons.favorite_border),
         onPressed: () {
           onToggleFavorite(institute);
         }

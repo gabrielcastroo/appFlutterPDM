@@ -29,6 +29,10 @@ class _MyAppState extends State<MyApp> {
   }
 
 
+  bool _isFavorite(Institutes institutes){
+    return _favoriteInstitutes.contains(institutes);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         AppRoutes.HOME:(context) => TabsScreen(_favoriteInstitutes),
         AppRoutes.CATEGORIES_INSTITUTES:(context) => CategoriesInstitutesScreen(),
-        AppRoutes.INSTITUTES_DETAILS:(context) => InstituteDetailsScreen(_toggleFavorite)
+        AppRoutes.INSTITUTES_DETAILS:(context) => InstituteDetailsScreen(_toggleFavorite,_isFavorite)
       }
     );
   }

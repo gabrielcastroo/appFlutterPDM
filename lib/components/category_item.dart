@@ -11,14 +11,21 @@ class CategoryItem extends StatelessWidget {
     Navigator.of(context).pushNamed(
       AppRoutes.CATEGORIES_INSTITUTES,
       arguments: category,
-      );
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (() { _selectCategory(context);}),
-      borderRadius: BorderRadius.circular(10),
+      onTap: (() {
+        _selectCategory(context);
+      }),
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(65),
+        bottomRight: Radius.circular(15),
+        topRight: Radius.zero,
+        bottomLeft: Radius.zero,
+      ),
       splashColor: Theme.of(context).primaryColor,
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -27,7 +34,12 @@ class CategoryItem extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+              topRight: Radius.zero,
+              bottomLeft: Radius.zero,
+            ),
             gradient: LinearGradient(colors: [
               category.color.withOpacity(0.5),
               category.color,

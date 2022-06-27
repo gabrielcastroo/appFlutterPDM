@@ -18,8 +18,13 @@ class InstituteItem extends StatelessWidget {
     return InkWell(
       onTap: () => _selectInstitute(context),
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+        shape:const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.zero,
+                    bottomRight: Radius.zero
+                  ),
         ),
         elevation: 5,
         margin:const EdgeInsets.all(8),
@@ -29,8 +34,10 @@ class InstituteItem extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   borderRadius:const BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.zero,
+                    bottomRight: Radius.zero
                   ),
                   child: Image.network(
                     institute.imageUrl as String,
