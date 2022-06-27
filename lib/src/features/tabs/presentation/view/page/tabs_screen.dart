@@ -1,27 +1,35 @@
+import 'package:aider/models/institutes.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_screen.dart';
 import 'package:aider/src/features/favorites/presentation/view/page/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key? key}) : super(key: key);
+  final List<Institutes> _favoriteInstitutes;
+
+  const TabsScreen(this._favoriteInstitutes);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-
   int _selectedScreenIndex = 0;
 
   final List<String> _titles = [
-    'Lista de Categorias',
+    'Categorias de Instituições',
     'Meus Favoritos',
   ];
- 
-  final List<Widget> _screens = [
-    CategoriesScreen(),
-    FavoriteScreen(),
-  ];
+
+  List<Widget> _screens = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      CategoriesScreen(),
+      FavoriteScreen(widget._favoriteInstitutes),
+    ];
+  }
 
   _selectScreen(int index) {
     setState(() {
@@ -33,7 +41,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Terceiro Setor'),
+        title: Text(_titles[_selectedScreenIndex]),
       ),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -44,13 +52,9 @@ class _TabsScreenState extends State<TabsScreen> {
         currentIndex: _selectedScreenIndex,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: 'Categorias'
-          ),
+              icon: Icon(Icons.category), label: 'Categorias'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoritos'
-          ),
+              icon: Icon(Icons.favorite), label: 'Favoritos'),
         ],
       ),
     );
