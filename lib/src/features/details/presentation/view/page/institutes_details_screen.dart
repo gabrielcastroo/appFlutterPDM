@@ -1,5 +1,6 @@
 import 'package:aider/models/institutes.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InstituteDetailsScreen extends StatelessWidget {
   const InstituteDetailsScreen({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class InstituteDetailsScreen extends StatelessWidget {
           Card(
             clipBehavior: Clip.antiAlias,
             elevation: 8,
-            margin:const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Column(
               children: <Widget>[
                 Image.network(
@@ -50,16 +51,18 @@ class InstituteDetailsScreen extends StatelessWidget {
                 ButtonBar(
                   alignment: MainAxisAlignment.start,
                   children: [
-                    FlatButton(
-                      textColor: const Color(0xFF6200EE),
-                      onPressed: () {
-                        // Perform some action
+                    TextButton(
+                      onPressed: () async {
+                        final url = institute.instituteLink!;
+
+                        if(await canLaunch(url)){
+                          await launch(url);
+                        }
                       },
                       child: const Text('SABER MAIS'),
                     ),
                   ],
                 ),
-                
               ],
             ),
           ),
