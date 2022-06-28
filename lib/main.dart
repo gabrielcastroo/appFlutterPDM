@@ -2,6 +2,7 @@ import 'package:aider/models/institutes.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_institutes_screen.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_screen.dart';
 import 'package:aider/src/features/details/presentation/view/page/institutes_details_screen.dart';
+import 'package:aider/src/features/onboarding/presentation/view/page/onboarding_page.dart';
 import 'package:aider/src/features/tabs/presentation/view/page/tabs_screen.dart';
 import 'package:aider/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       routes: {
+        AppRoutes.ONBOARDING:(context) =>const OnboardingPage(),
         AppRoutes.HOME:(context) => TabsScreen(_favoriteInstitutes),
         AppRoutes.CATEGORIES_INSTITUTES:(context) => CategoriesInstitutesScreen(),
         AppRoutes.INSTITUTES_DETAILS:(context) => InstituteDetailsScreen(_toggleFavorite,_isFavorite)
