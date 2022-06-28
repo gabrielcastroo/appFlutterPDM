@@ -26,13 +26,14 @@ class CategoryItem extends StatelessWidget {
         topRight: Radius.zero,
         bottomLeft: Radius.zero,
       ),
-      splashColor: Theme.of(context).primaryColor,
+      splashColor: Colors.white,
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Text(
           category.title as String,
           style: Theme.of(context).textTheme.titleMedium,
         ),
+        
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25),
@@ -40,10 +41,11 @@ class CategoryItem extends StatelessWidget {
               topRight: Radius.zero,
               bottomLeft: Radius.zero,
             ),
+            image: DecorationImage(image: NetworkImage(category.imageBackgroundURL as String)),
             gradient: LinearGradient(colors: [
-              category.color.withOpacity(0.5),
+              category.color.withOpacity(0.6),
               category.color,
-            ], begin: Alignment.topLeft, end: Alignment.topRight)),
+            ], begin: Alignment.bottomLeft, end: Alignment.bottomRight)),
       ),
     );
   }
