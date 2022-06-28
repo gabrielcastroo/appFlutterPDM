@@ -42,7 +42,7 @@ Widget buildPage(
               width: double.infinity,
               child: isLastPage
                   ? ElevatedButton(
-                      onPressed: () => Navigator.pushNamed(context, AppRoutes.HOME),
+                      onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.LOGIN),
                       child:const Text('Entrar'),
                     )
                   : null)

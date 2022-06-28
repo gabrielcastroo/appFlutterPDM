@@ -5,29 +5,29 @@ import 'package:flutter/material.dart';
 const DUMMY_CATEGORIES = [
   Category(
     id: 'c1', 
-    title: 'Entidade Beneficente',
-    color: Colors.black,
+    title: 'Entidades Beneficentes',
+    color: Colors.black26,
     imageBackgroundURL: 'https://escolaeducacao.com.br/wp-content/uploads/2018/06/atividades-de-tracejado-e-pontilhado-750x430.jpg',
     ),
 
   Category(
     id: 'c2', 
     title: 'Institutos',
-    color: Colors.black,
+    color: Colors.black26,
     imageBackgroundURL: 'https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     ),
 
   Category(
     id: 'c3', 
     title: 'Fundações',
-    color: Colors.black,
+    color: Colors.black26,
     imageBackgroundURL: 'https://images.unsplash.com/photo-1609139003551-ee40f5f73ec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     ),
 
   Category(
     id: 'c4', 
     title: 'ONGs',
-    color: Colors.black,
+    color: Colors.black26,
     imageBackgroundURL: 'https://images.unsplash.com/photo-1638526970908-b18e32b0bc42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     )
 ];
