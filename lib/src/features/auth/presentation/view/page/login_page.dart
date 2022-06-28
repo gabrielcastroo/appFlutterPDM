@@ -93,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onPressed: () {
                       //signup screen
+                      Navigator.pushNamed(context, AppRoutes.SIGNUP);
                     },
                   )
                 ],

@@ -1,5 +1,6 @@
 import 'package:aider/models/institutes.dart';
 import 'package:aider/src/features/auth/presentation/view/page/login_page.dart';
+import 'package:aider/src/features/auth/presentation/view/page/sign_up_page.dart';
 import 'package:aider/src/features/categories/presentation/view/page/categories_institutes_screen.dart';
 import 'package:aider/src/features/details/presentation/view/page/institutes_details_screen.dart';
 import 'package:aider/src/features/onboarding/presentation/view/page/onboarding_page.dart';
@@ -50,11 +51,12 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       routes: {
-        AppRoutes.ONBOARDING:(context) =>const OnboardingPage(),
+        AppRoutes.ONBOARDING:(context) => const OnboardingPage(),
         AppRoutes.HOME:(context) => TabsScreen(_favoriteInstitutes),
         AppRoutes.CATEGORIES_INSTITUTES:(context) => CategoriesInstitutesScreen(),
         AppRoutes.INSTITUTES_DETAILS:(context) => InstituteDetailsScreen(_toggleFavorite,_isFavorite),
         AppRoutes.LOGIN:(context) => const LoginPage(),
+        AppRoutes.SIGNUP:(context) => const SignUpPage(),
       }
     );
   }
