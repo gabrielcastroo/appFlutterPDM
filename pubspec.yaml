@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^1.0.0+2
   localization: ^2.1.0
+  shared_preferences: ^0.5.6+2
+  http: ^0.13.3
+  fluttertoast: ^8.0.7
   
 
 dev_dependencies:
