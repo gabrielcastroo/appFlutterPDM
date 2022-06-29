@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -105,6 +107,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ElevatedButton(
             onPressed: () async {
               var isRegistred = await register();
+              print(isRegistred);
               if (isRegistred) {
                 Fluttertoast.showToast(
                     msg: "Usuário Cadastrado Com Sucesso!",
@@ -138,12 +141,18 @@ class _SignUpPageState extends State<SignUpPage> {
   Future<bool> register() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     var url = Uri.parse('https://aider-api-v2.herokuapp.com/auth/register');
-    var response = await http.post(url, body: {
-      'email': emailController.text,
-      'password': passwordController.text,
-      'confirmpassword': passwordControllerConf.text,
-      'name': nameController.text
+
+    var body = jsonEncode({
+      "name": nameController.text.toString(),
+      "email": emailController.text.toString(),
+      "password": passwordController.text.toString(),
+      "confirmpassword": passwordControllerConf.text.toString()
     });
+
+    var response = await http.post(url, body: body );
+
+    print("sendo => ${body}");
+    print('response => ${response.statusCode} bodyResponse => ${response.body}');
     if (response.statusCode == 201) {
       return true;
     } else if (response.statusCode == 422) {

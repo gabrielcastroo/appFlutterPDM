@@ -1,12 +1,11 @@
 import 'package:aider/models/institutes.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class InstituteDetailsScreen extends StatelessWidget {
-  
-
   final Function(Institutes) onToggleFavorite;
-    
+
   final bool Function(Institutes) isFavorite;
 
   const InstituteDetailsScreen(this.onToggleFavorite, this.isFavorite);
@@ -60,10 +59,10 @@ class InstituteDetailsScreen extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: () async {
-                          final url = institute.instituteLink!;
-      
-                          if(await canLaunch(url)){
-                            await launch(url);
+                          final url = Uri.parse(institute.instituteLink as String);
+
+                          if (await canLaunchUrl(url)) {
+                            launchUrl(url);
                           }
                         },
                         child: const Text('SABER MAIS'),
@@ -77,11 +76,11 @@ class InstituteDetailsScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(isFavorite(institute) ? Icons.favorite : Icons.favorite_border),
-        onPressed: () {
-          onToggleFavorite(institute);
-        }
-        ),
+          child: Icon(
+              isFavorite(institute) ? Icons.favorite : Icons.favorite_border),
+          onPressed: () {
+            onToggleFavorite(institute);
+          }),
     );
   }
 }
